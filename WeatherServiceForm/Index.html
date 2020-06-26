@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+    $.ajax({
+            url: 'http://api.worldweatheronline.com/premium/v1/weather.ashx?key=67f4e3f804114a1faa9142141202604&q=china&format=json&num_of_days=5',
+            dataType: 'json',
+            type: 'get',
+            cache: false,
+            success: function (data) {
+                $(data.data).each(function (index, value) {
+                    console.log(data)
+                    var print = JSON.stringify(data, null, '\t')
+                    var div = document.getElementById('plsprint');
+                    div.innerHTML = print; 
+                });
+            }
+        })
+
+        
+
+    </script>
+
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <pre id="plsprint">
+
+</pre>
+
+</body>
+</html>
